@@ -40,7 +40,9 @@
             if (_canvas.getContext) {
                 canvas = _canvas;
                 context = canvas.getContext('2d');
+                console.log("canvas is not empty");
             }
+            console.log("inited");
 
             context.fillStyle = 'white';
             context.fillRect(0, 0, canvas.width, canvas.height);
@@ -111,8 +113,8 @@
         },
         download: function () {
             const link = document.createElement('a');
-            link.download = 'signImage_' + Date.now() + '.png';
             link.href = canvas.toDataURL('image/png');
+            link.download = 'signImage_' + Date.now() + '.png';
             link.click();
         },
         clear: function () {
